@@ -7,7 +7,7 @@ Ext.data.ProxyMgr.registerType("contactstorage",
             navigator.contacts.find(
                 ['id', 'name', 'emails', 'phoneNumbers', 'addresses'],
                 function(deviceContacts) {
-                   //loop over deviceContacts and create Contact model instances
+                    //loop over deviceContacts and create Contact model instances
                     var contacts = [];
                     for (var i = 0; i < deviceContacts.length; i++) {
                         var deviceContact = deviceContacts[ i ];
@@ -21,16 +21,16 @@ Ext.data.ProxyMgr.registerType("contactstorage",
                         contact.deviceContact = deviceContact;
                         contacts.push(contact);
                     }
-                   //return model instances in a result set
+                    //return model instances in a result set
                     operation.resultSet = new Ext.data.ResultSet({
                         records: contacts,
                         total  : contacts.length,
                         loaded : true
                     });
-                   //announce success
+                    //announce success
                     operation.setSuccessful();
                     operation.setCompleted();
-                   //finish with callback
+                    //finish with callback
                     if (typeof callback == "function") {
                         callback.call(scope || thisProxy, operation);
                     }
@@ -41,18 +41,18 @@ Ext.data.ProxyMgr.registerType("contactstorage",
         },
         update: function(operation, callback, scope) {
             operation.setStarted();
-           //put model data back into deviceContact
+            //put model data back into deviceContact
             var deviceContact = operation.records[0].deviceContact;
             var contact = operation.records[0].data;
             deviceContact.name.givenName = contact.givenName;
             deviceContact.name.familyName = contact.familyName;
-           //save back via PhoneGap
+            //save back via PhoneGap
             var thisProxy = this;
             deviceContact.save(function() {
-               //announce success
+                //announce success
                 operation.setCompleted();
                 operation.setSuccessful();
-               //finish with callback
+                //finish with callback
                 if (typeof callback == 'function') {
                     callback.call(scope || thisProxy, operation);
                 }
