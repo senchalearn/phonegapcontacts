@@ -1,2 +1,6 @@
 .DS_Store
 lib/touch
+ 
+/Contacts.xcodeproj/
+/Contacts/
+/www/lib/touch

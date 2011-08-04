@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contacts</title>
+        <script type="text/javascript" src="lib/touch/sencha-touch.js"></script>
+        <link href="lib/touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="app/app.js"></script>
+        <script type="text/javascript" src="app/views/Viewport.js"></script>
+        <script type="text/javascript" src="app/models/Contact.js"></script>
+        <script type="text/javascript" src="app/views/ContactsList.js"></script>
+        <script type="text/javascript" src="app/views/ContactDetail.js"></script>
+        <script type="text/javascript" src="app/views/ContactForm.js"></script>
+        <script type="text/javascript" src="app/controllers/contacts.js"></script>
+
+        <script type="text/javascript" src="phonegap-1.0.0.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", app.mainLaunch, false);
+        </script>
+
+        <style>
+            h4 {
+                background: #F7F7F7;
+                font-weight: bold!important;
+                margin: 0.5em 0 0!important;
+                padding: 5px;
+                border: solid #DDD;
+                border-width: 1px 0;
+            }
+            .field {
+                background:#FFFFFF;
+                font-size: 120%;
+                text-indent: -100px;
+                border-bottom: 1px solid #DDD;
+                padding:0.4em 0.4em 0.4em 100px;
+            }
+            .field .label {
+                display: inline-block;
+                color:#666;
+                text-align:right;
+                text-transform:capitalize;
+                width: 100px;
+                padding-right:1em;
+            }
+        </style>
+
+    </head><body></body>
+</html>
