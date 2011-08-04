@@ -3,6 +3,7 @@ app.views.ContactsList = Ext.extend(Ext.Panel, {
         xtype: 'toolbar',
         title: 'Contacts'
     }],
+    layout: 'fit',
     items: [{
         xtype: 'list',
         store: app.stores.contacts,
