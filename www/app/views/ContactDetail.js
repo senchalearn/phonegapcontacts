@@ -23,11 +23,11 @@ app.views.ContactDetail = Ext.extend(Ext.Panel, {
                 ui: 'action',
                 listeners: {
                     'tap': function () {
-                        //Ext.dispatch({
-                        //    controller: app.controllers.contacts,
-                        //    action: 'edit',
-                        //    id: this.record.getId()
-                        //});
+                        Ext.dispatch({
+                            controller: app.controllers.contacts,
+                            action: 'edit',
+                            id: this.record.getId()
+                        });
                     }
                 }
             }
